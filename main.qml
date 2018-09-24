@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Extras 1.4
-import QtQuick.Controls 2.3
+import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtMultimedia 5.8
 
@@ -25,19 +25,14 @@ Window {
         lcd.text = (min < 10 ? "0" : "") + min + ":" + (sec < 10 ? "0" : "") + sec;
     }
 
-    function playSound()
+    function ringtone()
     {
-        soundeffect.play();
+        FraxionActivity.ringtone();
     }
 
     function vibrate()
     {
-        // TODO
-    }
-
-    SoundEffect {
-        id: soundeffect
-        source: "qrc:///tone_fraxion.wav"
+        FraxionActivity.vibrate(1000);
     }
 
     Timer {
@@ -68,7 +63,7 @@ Window {
             if(reste == 0 || calcul == 0)
             {
                 if(switchSon.checked)
-                    playSound();
+                    ringtone();
 
                 if(switchVibreur.checked)
                     vibrate();

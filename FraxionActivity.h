@@ -2,7 +2,10 @@
 #define FRAXIONACTIVITY_H
 
 #include <QObject>
-#include <QAndroidJniObject>
+
+#ifdef __ANDROID__
+    #include <QAndroidJniObject>
+#endif
 
 class FraxionActivity : public QObject
 {

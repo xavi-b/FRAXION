@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>tone_fraxion.wav</file>
     </qresource>
 </RCC>

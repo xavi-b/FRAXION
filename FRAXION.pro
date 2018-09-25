@@ -32,7 +32,6 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 }
 
 DISTFILES += \
-    android/res/drawable/icon.png \
-    android/res/raw/ringtone.wav
+    android/res/drawable/icon.png
 
 

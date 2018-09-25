@@ -34,6 +34,6 @@ public class FraxionActivity extends QtActivity
 
     public static void ringtone()
     {
-        RingtoneManager.getRingtone(fraxionActivity, Uri.parse("android.resource://" + fraxionActivity.getPackageName() + "/raw/" + "ringtone.wav")).play();
+        RingtoneManager.getRingtone(fraxionActivity, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).play();
     }
 }

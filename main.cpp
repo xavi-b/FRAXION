@@ -4,7 +4,6 @@
 #include "FraxionActivity.h"
 
 // TODO
-// ringtone
 // settings
 
 int main(int argc, char *argv[])

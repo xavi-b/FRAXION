@@ -3,14 +3,14 @@
 #include <QQmlApplicationEngine>
 #include "FraxionActivity.h"
 
-// TODO
-// settings
-
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
+    app.setOrganizationName("xavi-b");
+    app.setApplicationName("FRAXION");
+
     FraxionActivity fraxionActivity;
 
     QQmlApplicationEngine engine;

@@ -4,6 +4,7 @@ import QtQuick.Extras 1.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtMultimedia 5.8
+import Qt.labs.settings 1.0
 
 Window {
     visible: true
@@ -33,6 +34,14 @@ Window {
     function vibrate()
     {
         FraxionActivity.vibrate(1000);
+    }
+
+    Settings {
+        id: settings;
+        property alias tranquille: dialTranquille.value
+        property alias soutenu: dialSoutenu.value
+        property alias vibreur: switchVibreur.checked
+        property alias son: switchSon.checked
     }
 
     Timer {
@@ -97,7 +106,7 @@ Window {
                 SpinBox {
                     id: spinBoxTranquille
                     from: minSec
-                    value: 10
+                    value: settings.tranquille
                     anchors.top: labelTranquille.bottom
                     anchors.topMargin: 20
                     to: maxSec
@@ -127,7 +136,7 @@ Window {
                 SpinBox {
                     id: spinBoxSoutenu
                     from: minSec
-                    value: 10
+                    value: settings.soutenu
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: 0
                     to: maxSec

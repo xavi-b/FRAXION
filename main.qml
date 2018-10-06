@@ -10,7 +10,7 @@ Window {
     visible: true
     width: 320
     height: 480
-    title: qsTr("FRAXION")
+    title: "FRAXION"
 
     property int elapsed: 0
     property int minSec: 10
@@ -121,7 +121,7 @@ Window {
                     id: labelTranquille
                     width: 140
                     height: 40
-                    text: qsTr("Durée tranquille")
+                    text: qsTr("Low intensity duration")
                     font.bold: true
                     font.pointSize: 12
                     anchors.top: parent.top
@@ -151,7 +151,7 @@ Window {
                     id: labelSoutenu
                     width: 140
                     height: 40
-                    text: qsTr("Durée soutenue")
+                    text: qsTr("High intensity duration")
                     font.bold: true
                     font.pointSize: 12
                     anchors.bottom: spinBoxSoutenu.top
@@ -209,7 +209,7 @@ Window {
         Label {
             id: lcd
             color: colorTranquille
-            text: qsTr("00:00")
+            text: "00:00"
             font.bold: true
             anchors.top: gridView.bottom
             anchors.topMargin: 0
@@ -246,7 +246,7 @@ Window {
                     id: switchVibreur
                     width: 140
                     height: 40
-                    text: qsTr("Vibreur")
+                    text: qsTr("Vibrator")
                     anchors.top: parent.top
                     anchors.topMargin: 10
                 }
@@ -255,7 +255,7 @@ Window {
                     id: switchSon
                     width: 140
                     height: 40
-                    text: qsTr("Son")
+                    text: qsTr("Sound")
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: 10
                 }
@@ -265,7 +265,7 @@ Window {
                 id: buttonAction
                 width: 100
                 height: 100
-                text: qsTr("Start/Stop")
+                text: "START"
                 anchors.right: parent.right
                 anchors.rightMargin: 10
                 onClicked: {
@@ -277,11 +277,13 @@ Window {
                         spinBoxSoutenu.enabled = true;
 
                         timer.stop();
+                        buttonAction.text = "START";
                     }
                     else
                     {
                         elapsed = 0;
                         lcd.color = colorTranquille;
+                        lcd.text = "00:00";
 
                         dialTranquille.enabled = false;
                         dialSoutenu.enabled = false;
@@ -289,6 +291,7 @@ Window {
                         spinBoxSoutenu.enabled = false;
 
                         timer.start();
+                        buttonAction.text = "STOP";
                     }
                 }
             }
